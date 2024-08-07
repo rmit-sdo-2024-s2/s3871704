@@ -2,7 +2,7 @@ name: first github action work
 on: push
 jobs:
   say-hi:
-    runs-on: ubuntu-lastest
+    runs-on: ubuntu-latest
     steps:
       - name: print hello
-        run: echo "hello world"         
+        run: echo "hello world"
