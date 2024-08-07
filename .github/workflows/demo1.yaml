@@ -1,8 +1,0 @@
-name: first github action work
-on: push
-jobs:
-  say-hi:
-    runs-on: ubuntu-lastest
-    steps:
-      - name: print hello
-        run: echo "hello world"         

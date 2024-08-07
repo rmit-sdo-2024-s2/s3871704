@@ -1,0 +1,22 @@
+name: CI pipeline
+on: push
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        defaults:
+            run: 
+                working-directory: src
+        steps:
+            - name: Checkout repo
+              uses: actions/checkout@v3
+
+            - name: Set up Node.js
+              uses: actions/setup-node@v3
+              with: 
+                node-version: '18'
+            - name: Download cached dependencies
+              uses: actions/cache@v3
+              id: cache
+              with: 
+                path: node_modules
+                key: deps-node-modules-${{ hashFiles('src/package-lock.json') }}
